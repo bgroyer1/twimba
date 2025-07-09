@@ -2,14 +2,42 @@
 import { tweetsData } from "./data.js";
 
 /* Dom Elements */
-const tweetInput = document.querySelector("#tweet-input");
-const tweetBtn = document.querySelector("#tweet-btn");
 
 /* Event Listeners */
-tweetBtn.addEventListener("click", handleTweetButtonClick);
-document.addEventListener("click", handleTweetDetailsClick);
+document.addEventListener("click", (e) => determineClickSource(e));
 
 /* Functions */
+
+// added
+function determineClickSource(e) {
+  if (e.target.id === 'tweet-btn') {
+    handleTweetButtonClick()
+  } else {
+    handleTweetDetailsClick(e)
+  }
+}
+
+// handle clicks on the tweet button by creating a new object with a unique uuid
+
+function handleTweetButtonClick() {
+  const tweetInput = document.querySelector("#tweet-input");
+  const trimmedTweet = tweetInput.value.trim();
+  if (trimmedTweet) {
+    tweetsData.unshift ({
+      handle: `@scrimbaUser`,
+          profilePic: `./images/scrimbalogo.png`,
+          likes: 0,
+          retweets: 0,
+          tweetText: tweetInput.value,
+          replies: [],
+          isLiked: false,
+          isRetweeted: false,
+          uuid: uuidv4(),
+    })
+  render();
+  tweetInput.value = ''
+  }
+}
 
 // grab the tweets uuid based on which tweet detail you clicked on
 function targetTweet(t, e) {
