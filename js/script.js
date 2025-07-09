@@ -1,11 +1,12 @@
+/* Imports */
 import { tweetsData } from "./data.js";
 
 /* Dom Elements */
 const tweetInput = document.querySelector("#tweet-input");
 const tweetBtn = document.querySelector("#tweet-btn");
 
-/* Event listeners */
-tweetBtn.addEventListener("click", () => {});
+/* Event Listeners */
+tweetBtn.addEventListener("click", handleTweetButtonClick);
 document.addEventListener("click", handleTweetDetailsClick);
 
 /* Functions */
@@ -16,35 +17,29 @@ function targetTweet(t, e) {
   return tweetsData.find((tweet) => tweet.uuid === uuid);
 }
 
+// check to see if tweet isLiked or isRetweted
 function incrementLikesAndRetweets(tweet, prop, countProp) {
-  // check to see if tweet isLiked or isRetweted
   // increment or decrement accordingly
   tweet[prop] ? tweet[countProp]-- : tweet[countProp]++;
   // flip the isLiked or isRetweeted boolean
   tweet[prop] = !tweet[prop];
 }
 
+// handle clicks on the iframe icons (like, retweet, replies)
 function handleTweetDetailsClick(e) {
-
   let updated = false;
 
   if (e.target.dataset.like) {
     const t = targetTweet("like", e);
     incrementLikesAndRetweets(t, "isLiked", "likes");
     updated = true;
-  } 
-
-  else if (e.target.dataset.retweet) {
+  } else if (e.target.dataset.retweet) {
     const t = targetTweet("retweet", e);
     incrementLikesAndRetweets(t, "isRetweeted", "retweets");
     updated = true;
-  } 
-  
-  else if (e.target.dataset.replies) {
-    const t = targetTweet('replies', e);
-    if (t.replies.length > 0) {
-      document.querySelector(`#replies-${t.uuid}`).classList.toggle('hidden')
-    }
+  } else if (e.target.dataset.replies) {
+    const t = targetTweet("replies", e);
+    document.querySelector(`#replies-${t.uuid}`).classList.toggle("hidden");
   }
 
   if (updated) render();
@@ -119,5 +114,3 @@ function render() {
 /* Function Calls */
 
 render();
-
-
