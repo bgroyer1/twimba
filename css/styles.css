@@ -114,6 +114,11 @@ button{
     line-height: 20px;
 }
 
+
+.fa-solid {
+    color: #999;
+}
+
 /* images */
 
 .profile-pic{
@@ -125,4 +130,12 @@ button{
 /* utility */
 .hidden{
     display: none;
+}
+
+.liked {
+    color:red;
+}
+
+.retweeted {
+    color: green;
 }

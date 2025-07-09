@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <!-- META TAGS -->
     <meta charset="UTF-8" />
     <meta name="author" content="Braedan Royer" />
@@ -10,31 +9,57 @@
       content="A twitter clone made as part of Scrimbas javascript course"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Twimba, Twitter clone, Scrimba, JavaScript project" />
+    <meta
+      name="keywords"
+      content="Twimba, Twitter clone, Scrimba, JavaScript project"
+    />
 
     <!-- TITLE -->
     <title>Twimba Project</title>
 
-    <!-- STYLE LINKS -->
+    <!-- FAVICON -->
     <link rel="icon" href="./images/favicon.ico" />
+
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="./css/styles.css" />
 
-    <!-- GOOGLE FONTS -->
+    <!--  FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap"
+      rel="stylesheet"
+    />
     <!-- JAVASCRIPT -->
     <script src="./js/script.js" type="module" defer></script>
   </head>
+
   <body>
-    	<header>
-		<h1>Twimba</h1>
-	</header>
-	<main>
-		<div class="tweet-input-area">
-			<img src="images/scrimbalogo.png" class="profile-pic">
-      <textarea id="tweet-input" placeholder="What's on your mind?"></textarea>
-		</div>
-		<button id="tweet-btn">Tweet</button>
-		<div class="feed" id="feed"></div>
-	</main>
+    <header>
+      <h1>Twimba</h1>
+    </header>
+
+    <main>
+      <div class="tweet-input-area">
+        <img src="images/scrimbalogo.png" class="profile-pic" />
+        <textarea
+          id="tweet-input"
+          placeholder="What's on your mind?"
+        ></textarea>
+      </div>
+
+      <button id="tweet-btn">Tweet</button>
+      <div class="feed" id="feed"></div>
+    </main>
+    
   </body>
 </html>
