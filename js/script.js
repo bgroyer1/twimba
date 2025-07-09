@@ -1,5 +1,10 @@
 /* Imports */
 import { tweetsData } from "./data.js";
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
+
+const id = uuidv4();
+console.log(id)
 
 /* Dom Elements */
 
@@ -40,6 +45,10 @@ function handleTweetButtonClick() {
 }
 
 // grab the tweets uuid based on which tweet detail you clicked on
+function handleTweetButtonClick() {
+  console.log('hello world')
+}
+
 function targetTweet(t, e) {
   const uuid = e.target.dataset[t];
   return tweetsData.find((tweet) => tweet.uuid === uuid);
