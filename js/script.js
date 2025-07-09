@@ -25,16 +25,28 @@ function incrementLikesAndRetweets(tweet, prop, countProp) {
 }
 
 function handleTweetDetailsClick(e) {
+
   let updated = false;
+
   if (e.target.dataset.like) {
     const t = targetTweet("like", e);
     incrementLikesAndRetweets(t, "isLiked", "likes");
     updated = true;
-  } else if (e.target.dataset.retweet) {
+  } 
+
+  else if (e.target.dataset.retweet) {
     const t = targetTweet("retweet", e);
     incrementLikesAndRetweets(t, "isRetweeted", "retweets");
     updated = true;
+  } 
+  
+  else if (e.target.dataset.replies) {
+    const t = targetTweet('replies', e);
+    if (t.replies.length > 0) {
+      document.querySelector(`#replies-${t.uuid}`).classList.toggle('hidden')
+    }
   }
+
   if (updated) render();
 }
 
