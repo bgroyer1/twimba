@@ -1,32 +1,39 @@
 <html>
+  <head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Script Tag -->
+    <script src="./src/main.ts" type="module" defer></script>
+  </head>
 
-<head>
-	<!-- CSS -->
-	<link rel="stylesheet" href="index.css">
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="/src/style.css">
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Script Tag -->
-  <script src="./src/main.ts" type='module' defer></script>
-</head>
-
-<body>
-	<header>
-		<h1>Twimba</h1>
-	</header>
-	<main>
-		<div class="tweet-input-area">
-			<img src="./scrimbalogo.png" class="profile-pic">
-			<textarea
-			id="tweet-input"
-			placeholder="What's happening?	"></textarea>
-		</div>
-		<button id="tweet-btn">Tweet</button>
-		<div class="feed" id="feed"></div>
-	</main>
-</body>
-
+  <body>
+    <header>
+      <h1>Twimba</h1>
+    </header>
+    <main>
+      <div class="tweet-input-area">
+        <img src="./scrimbalogo.png" class="profile-pic" />
+        <textarea id="tweet-input" placeholder="What's happening?	"></textarea>
+      </div>
+      <button id="tweet-btn">Tweet</button>
+      <div class="feed" id="feed"></div>
+    </main>
+  </body>
 </html>
